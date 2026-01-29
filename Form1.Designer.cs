@@ -36,9 +36,9 @@
             lblAddress = new Label();
             lblGrade = new Label();
             lblMonthOfAdm = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtFirst = new TextBox();
+            txtLast = new TextBox();
+            txtAddress = new TextBox();
             cbGrade = new ComboBox();
             cbMonthOfAdm = new ComboBox();
             btnDelete = new Button();
@@ -74,6 +74,7 @@
             btnAddToList.TabIndex = 2;
             btnAddToList.Text = "^^Add To List^^";
             btnAddToList.UseVisualStyleBackColor = false;
+            btnAddToList.Click += btnAddToList_Click;
             // 
             // lblFirstName
             // 
@@ -120,30 +121,30 @@
             lblMonthOfAdm.TabIndex = 7;
             lblMonthOfAdm.Text = "Month of Admission";
             // 
-            // textBox1
+            // txtFirst
             // 
-            textBox1.BackColor = SystemColors.Info;
-            textBox1.Location = new Point(53, 297);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(205, 23);
-            textBox1.TabIndex = 8;
+            txtFirst.BackColor = SystemColors.Info;
+            txtFirst.Location = new Point(53, 297);
+            txtFirst.Name = "txtFirst";
+            txtFirst.Size = new Size(205, 23);
+            txtFirst.TabIndex = 8;
             // 
-            // textBox2
+            // txtLast
             // 
-            textBox2.BackColor = SystemColors.Info;
-            textBox2.Location = new Point(274, 298);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(205, 23);
-            textBox2.TabIndex = 9;
+            txtLast.BackColor = SystemColors.Info;
+            txtLast.Location = new Point(274, 298);
+            txtLast.Name = "txtLast";
+            txtLast.Size = new Size(205, 23);
+            txtLast.TabIndex = 9;
             // 
-            // textBox3
+            // txtAddress
             // 
-            textBox3.BackColor = SystemColors.Info;
-            textBox3.Location = new Point(513, 298);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(224, 140);
-            textBox3.TabIndex = 10;
+            txtAddress.BackColor = SystemColors.Info;
+            txtAddress.Location = new Point(513, 298);
+            txtAddress.Multiline = true;
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(224, 140);
+            txtAddress.TabIndex = 10;
             // 
             // cbGrade
             // 
@@ -172,6 +173,7 @@
             btnDelete.TabIndex = 13;
             btnDelete.Text = "Delete Student";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // Form1
             // 
@@ -181,9 +183,9 @@
             Controls.Add(btnDelete);
             Controls.Add(cbMonthOfAdm);
             Controls.Add(cbGrade);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtAddress);
+            Controls.Add(txtLast);
+            Controls.Add(txtFirst);
             Controls.Add(lblMonthOfAdm);
             Controls.Add(lblGrade);
             Controls.Add(lblAddress);
@@ -210,9 +212,9 @@
         private Label lblAddress;
         private Label lblGrade;
         private Label lblMonthOfAdm;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtFirst;
+        private TextBox txtLast;
+        private TextBox txtAddress;
         private ComboBox cbGrade;
         private ComboBox cbMonthOfAdm;
         private Button btnDelete;

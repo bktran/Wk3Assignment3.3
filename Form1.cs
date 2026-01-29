@@ -11,5 +11,25 @@ namespace Wk3Assignment3._3
         {
             dgStudentList.DataSource = Data.Students;
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Student student = (Student)dgStudentList.CurrentRow.DataBoundItem;
+            var result = MessageBox.Show($"Are you sure you want to delete {student.FirstName} {student.LastName}?", "Confirm", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Data.Students.RemoveAt(dgStudentList.CurrentRow.Index);
+                dgStudentList.DataSource = null;
+                dgStudentList.DataSource = Data.Students;
+            }
+        }
+
+        private void btnAddToList_Click(object sender, EventArgs e)
+        {
+            if (txtFirst.Text == string.Empty || txtLast.Text == string.Empty || txtAddress.Text == string.Empty || cbGrade.Text == string.Empty || cbMonthOfAdm.Text == string.Empty)
+            {
+                MessageBox.Show("Cannot add empty fields");
+            }
+        }
     }
 }
