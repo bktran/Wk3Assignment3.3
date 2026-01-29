@@ -32,12 +32,12 @@ namespace Wk3Assignment3._3
     }
     internal class Student
     {
-        private static int IDcounter = 0;
+        private static int IdCounter = 0;
         public  int ID{ get; }
         public Student()
         { 
-            ID = IDcounter + 1;
-            IDcounter++;
+            ID = IdCounter + 1;
+            IdCounter++;
         }
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -10,6 +10,8 @@ namespace Wk3Assignment3._3
         private void Form1_Load(object sender, EventArgs e)
         {
             dgStudentList.DataSource = Data.Students;
+            cbGrade.DataSource = Enum.GetValues(typeof(Grade));
+            cbMonthOfAdm.DataSource = Enum.GetValues(typeof(MonthOfAdmission));
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -30,6 +32,30 @@ namespace Wk3Assignment3._3
             {
                 MessageBox.Show("Cannot add empty fields");
             }
+            else
+            {
+                Student newStudent = new Student();
+                newStudent.FirstName = txtFirst.Text;
+                newStudent.LastName = txtLast.Text;
+                newStudent.Address = txtAddress.Text;
+                newStudent.Grade = (Grade)(cbGrade.SelectedIndex + 1);
+                newStudent.AdmissionMonth = (MonthOfAdmission)(cbMonthOfAdm.SelectedIndex + 1);
+                Data.Students.Add(newStudent);
+                MessageBox.Show($"Added {newStudent.FirstName} {newStudent.LastName} to list.");
+                EmptyAllFields();
+            }
+            dgStudentList.DataSource = null;
+            dgStudentList.DataSource = Data.Students;
+
+        }
+
+        public void EmptyAllFields()
+        { 
+            txtFirst.Text = string.Empty;
+            txtLast.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+            cbGrade.SelectedIndex = 0;
+            cbMonthOfAdm.SelectedIndex = 0;
         }
     }
 }
